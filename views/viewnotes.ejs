@@ -1,0 +1,17 @@
+<%- include('header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Notes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Notes for <%= book.title %></h1>
+        <p><%= book.notes %></p>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+    </div>
+</body>
+</html>

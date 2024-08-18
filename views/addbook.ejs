@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= book ? 'Edit Book' : 'Add New Book' %></title>
-    <link rel="stylesheet" href="/css/styles.css"> 
+    <link rel="stylesheet" href="/css/add.css"> 
 </head>
 <body>
     <header class="new-book-header">
@@ -16,27 +16,37 @@
             <% if (book) { %> 
                 <input type="hidden" name="id" value="<%= book.id %>">
             <% } %>
+        <div>
             <div>
                 <label for="title">Title:</label>
-                <input type="text" id="title" name="title" value="<%= book ? book.title : '' %>" required>
+                <input type="text" class = "fields" id="title" name="title" value="<%= book ? book.title : '' %>" required>
             </div>
             <div>
                 <label for="author">Author:</label>
-                <input type="text" id="author" name="author" value="<%= book ? book.author : '' %>" required>
+                <input type="text" class = "fields" id="author" name="author" value="<%= book ? book.author : '' %>" required>
             </div>
             <div>
                 <label for="isbn">ISBN:</label>
-                <input type="text" id="isbn" name="isbn" value="<%= book ? book.isbn : '' %>" required>
+                <input type="text"  class = "fields" id="isbn" name="isbn" value="<%= book ? book.isbn : '' %>" required>
             </div>
             <div>
                 <label for="rating">Rating (1-5):</label>
-                <input type="number" id="rating" name="rating" min="1" max="5" value="<%= book ? book.rating : '' %>" required>
+                <input type="number"  class = "fields" id="rating" name="rating" min="1" max="5" value="<%= book ? book.rating : '' %>" required>
             </div>
             <div>
                 <label for="read_date">Read Date:</label>
-                <input type="date" id="read_date" name="read_date" value="<%= book ? book.read_date : '' %>" required>
+                <input type="date"  class = "fields" id="read_date" name="read_date" value="<%= book ? book.read_date : '' %>" required>
             </div>
-            <button type="submit"><%= book ? 'Update Book' : 'Add Book' %></button>
+            <div>
+                <label for="notes">Notes:</label>
+                <textarea id="notes"  class = "fields" name="notes" rows="4" required><%= book ? book.notes : '' %></textarea>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="custom-btn">
+                    <%= book ? 'Update Book' : 'Add Book' %>
+                </button>
+            </div>
+            
         </form>
     </div>
 </body>

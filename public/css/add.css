@@ -1,0 +1,35 @@
+.fields {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 50px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+#notes {
+    height: 150px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centers the button horizontally */
+    margin-top: 20px;        /* Adds some space on top of the button */
+    margin-bottom: 20px;     /* Adds some space below the button */
+}
+
+.custom-btn {
+    background-color: green; 
+    color: white;            
+    border: none;            
+    padding: 10px 20px;      
+    font-size: 16px;         
+    border-radius: 5px;      
+    cursor: pointer;         
+}
+
+.custom-btn:hover {
+    background-color: darkgreen; 
+}

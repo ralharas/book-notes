@@ -1,7 +1,10 @@
+<%- include('header') %>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 <div class="container">
     <h1>My Book Tracker</h1>
     <a href="/add-book" class="btn btn-primary">Add New Book</a>
 
+    <script src="/scripts.js" defer></script> 
     <table class="table table-striped">
         <thead>
             <tr>
@@ -21,9 +24,8 @@
                     <td><%= book.rating %> / 5</td>
                     <td>
                         <a href="/edit-book/<%= book.id %>" class="btn btn-warning">Edit</a>
-                        <form action="/delete-book/<%= book.id %>" method="POST" style="display:inline;">
-                            <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>
+                        <a href="/view-notes/<%= book.id %>" class="btn btn-info">View Notes</a>
+                        <button class="btn btn-danger delete-book-button" data-book-id="<%= book.id %>">Delete</button>
                     </td>
                 </tr>
             <% }) %>
