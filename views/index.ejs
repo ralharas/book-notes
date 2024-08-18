@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>My Book Tracker</h1>
+    <a href="/add-book" class="btn btn-primary">Add New Book</a>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Rating</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% books.forEach(book => { %>
+                <tr>
+                    <td><img src="<%= book.cover_url %>" alt="Cover Image" style="width: 50px;"></td>
+                    <td><%= book.title %></td>
+                    <td><%= book.author %></td>
+                    <td><%= book.rating %> / 5</td>
+                    <td>
+                        <a href="/edit-book/<%= book.id %>" class="btn btn-warning">Edit</a>
+                        <form action="/delete-book/<%= book.id %>" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</div>
